@@ -8,6 +8,9 @@ export const theme = {
     rose: '#cd8987',
     background: {
       default: '#fff'
+    },
+    text: {
+      primary: '#565656'
     }
   }
 };
