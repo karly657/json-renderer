@@ -30,13 +30,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+// TODO handle no images with image placeholder
 const Tile = ({ product: { _id: { $oid }, images, title, price, tags, rating } }) => {
   const classes = useStyles();
 
   return (
     <Link to={PRODUCT_PAGE_PATH.replace(':productID', $oid)} className={classes.link}>
       <div className={classes.root}>
-        <img src={images[0]} className={classes.image} />
+        <img src={images[0]} className={classes.image} alt={`img-${$oid}`} />
         <div className={classes.description}>
           <Box fontSize={12}>{tags}</Box>
           <Box color="text.primary">{title}</Box>

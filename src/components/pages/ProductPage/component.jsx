@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
 
+import ProductGallery from '@/components/blocks/ProductGallery';
+
 const useStyles = makeStyles(theme => ({
   root: {},
   description: {
@@ -31,7 +33,7 @@ const Productpage = ({
       {info && (
         <Grid container>
           <Grid item md={6} sm={12}>
-            Gallery
+            <ProductGallery images={info.images} />
           </Grid>
           <Grid item md={6} sm={12}>
             <Box>{`Tags: ${info.tags}`}</Box>
