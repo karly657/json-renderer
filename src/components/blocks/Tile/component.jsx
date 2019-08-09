@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
 
+import { PRODUCT_PAGE_PATH } from '@/constants';
+
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(1),
@@ -28,14 +30,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Tile = ({ product: { id, images, title, price, tags, rating } }) => {
+const Tile = ({ product: { _id: { $oid }, images, title, price, tags, rating } }) => {
   const classes = useStyles();
 
   return (
-    <Link to="/" className={classes.link}>
+    <Link to={PRODUCT_PAGE_PATH.replace(':productID', $oid)} className={classes.link}>
       <div className={classes.root}>
         <img src={images[0]} className={classes.image} />
-        <div classname={classes.description}>
+        <div className={classes.description}>
           <Box fontSize={12}>{tags}</Box>
           <Box color="text.primary">{title}</Box>
           <Box
