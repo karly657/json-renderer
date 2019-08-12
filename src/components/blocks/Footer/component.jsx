@@ -1,14 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+import { Container, Grid } from '@material-ui/core';
 import Socials from '@/components/blocks/Socials';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor:'#000',
+    backgroundColor: '#000',
     marginTop: theme.spacing(3),
-    color: '#fff',
+    color: '#fff'
   },
   top: {
     borderBottom: `1px solid ${theme.palette.grey}`,
@@ -30,7 +29,7 @@ const Footer = () => {
       </div>
       <div className={classes.bot}>
         <Container maxWidth="lg">
-          <Grid container justify="space-between"alignItems="center">
+          <Grid container justify="space-between" alignItems="center">
             <Grid item>Lorem ipsum dolor sit amet</Grid>
             <Grid item>
               <Socials />

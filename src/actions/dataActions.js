@@ -1,5 +1,6 @@
 import { API_URL } from '@/constants';
 import { mapProducts } from '@/helpers';
+import { setFiltersProps } from './filterActions';
 
 export const FETCH_DATA = 'FETCH_DATA';
 export const RESPONSE_DATA = 'RESPONSE_DATA';
@@ -14,6 +15,7 @@ export const fetchData = () => async dispatch => {
   const response = await fetch(API_URL).then(resp => resp.json());
   const filters = mapProducts(response);
 
+  dispatch(setFiltersProps(filters));
   dispatch(responseData(response));
 };
 

@@ -2,9 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
+import { Grid, Container, Box } from '@material-ui/core';
 import Socials from '@/components/blocks/Socials';
 import Menu from '@/components/blocks/Menu';
 

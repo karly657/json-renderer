@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox, FormControl, FormControlLabel, Typography, Select, MenuItem } from '@material-ui/core';
 import FilterList from '@/components/blocks/FilterList';
 
 class Sidebar extends React.Component {
@@ -18,6 +17,9 @@ class Sidebar extends React.Component {
 
   render() {
     const { colors, sizes, tags } = this.props;
+    console.log(colors)
+    console.log(sizes)
+    console.log(tags)
     return (
       <>
         <FilterList name="color" values={colors} />

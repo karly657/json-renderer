@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
-
-import Filterlist from './component';
-import { filterData } from '@/actions/filterActions';
+import SortPanel from './component';
+import { sortData } from '@/actions/filterActions';
 
 const mapStateToProps = undefined;
 
 const mapDispatchToProps = dispatch => ({
-  setFilters: filters => dispatch(filterData(filters))
+  sort: type => dispatch(sortData(type))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Filterlist);
+)(SortPanel);

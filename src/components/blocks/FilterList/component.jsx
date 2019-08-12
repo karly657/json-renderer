@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Checkbox,
+  Collapse
+} from '@material-ui/core';
+import { ExpandLess, ExpandMore } from '@material-ui/icons';
 
 class FilterList extends React.Component {
   constructor(props) {
@@ -33,7 +34,10 @@ class FilterList extends React.Component {
       newChecked.splice(currentIndex, 1);
     }
 
-    // this.setState(() => ({ checked: newChecked }), () => setFilters({ type: name, value: newChecked }));
+    this.setState(
+      () => ({ checked: newChecked }),
+      () => setFilters({ type: name, value: newChecked })
+    );
   };
 
   handleOpenList = () => {
@@ -55,7 +59,13 @@ class FilterList extends React.Component {
             return (
               <Collapse in={open} timeout="auto" unmountOnExit key={labelId}>
                 <List component="div" disablePadding>
-                  <ListItem key={value} role={undefined} dense button onClick={this.handleToggle(value)}>
+                  <ListItem
+                    key={value}
+                    role={undefined}
+                    dense
+                    button
+                    onClick={this.handleToggle(value)}
+                  >
                     <ListItemIcon>
                       <Checkbox
                         edge="start"

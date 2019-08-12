@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import ReactImageMagnify from 'react-image-magnify';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -24,6 +23,7 @@ const ProductGallery = ({ images }) => {
       src={image}
       onDragStart={handleOnDragStart}
       className={classes.image}
+      alt={image}
     />
   ));
   return (
