@@ -1,5 +1,5 @@
-import { API_URL } from '../constants';
-import { mapProducts } from '../helpers';
+import { API_URL } from '@/constants';
+import { mapProducts } from '@/helpers';
 
 export const FETCH_DATA = 'FETCH_DATA';
 export const RESPONSE_DATA = 'RESPONSE_DATA';

@@ -5,16 +5,23 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import { Twitter, Instagram, Facebook, Google } from 'mdi-material-ui'
+import Socials from '@/components/blocks/Socials';
+import Menu from '@/components/blocks/Menu';
 
-import { HOME_PAGE_PATH, PRODUCTS_PAGE_PATH } from '@/constants';
+import { HOME_PAGE_PATH } from '@/constants';
 
 const useStyles = makeStyles(theme => ({
-  root: {},
-  logo: {
-    margin: 0
+  root: {
+    textTransform: 'uppercase'
   },
-  link: {},
+  logo: {
+    margin: 0,
+    textAlign: 'center'
+  },
+  link: {
+    textDecoration: 'none',
+    color: theme.palette.grey
+  },
   icon: {}
 }));
 
@@ -25,35 +32,28 @@ const Header = () => {
       <Container maxWidth="lg">
         <Grid container justify="space-between" alignItems="center">
           <Grid item>
-            <Box
-              letterSpacing={6}
-              m={1}
-              fontSize="h4.fontSize"
-              fontWeight="fontWeightBold"
-              className={classes.logo}
-            >
-              JSON
-            </Box>
-            <Box
-              letterSpacing={1}
-              m={1}
-              fontSize="h5.fontSize"
-              className={classes.logo}
-            >
-              Renderer
-            </Box>
+            <Link to={HOME_PAGE_PATH} className={classes.link}>
+              <Box
+                letterSpacing={10}
+                m={1}
+                fontSize="h4.fontSize"
+                fontWeight="fontWeightBold"
+                className={classes.logo}
+              >
+                JSON
+              </Box>
+              <Box m={1} fontSize="h5.fontSize" className={classes.logo}>
+                Renderer
+              </Box>
+            </Link>
           </Grid>
           {/* Menu */}
           <Grid item>
-            <Link to={HOME_PAGE_PATH}>Home</Link>
-            <Link to={PRODUCTS_PAGE_PATH}>Products</Link>
+            <Menu />
           </Grid>
           {/* Socials */}
           <Grid item>
-            <Facebook />
-            <Google />
-            <Instagram />
-            <Twitter />
+            <Socials />
           </Grid>
         </Grid>
       </Container>

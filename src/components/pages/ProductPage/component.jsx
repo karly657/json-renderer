@@ -31,11 +31,11 @@ const Productpage = ({
   return (
     <Container maxWidth="lg">
       {info && (
-        <Grid container>
-          <Grid item md={6} sm={12}>
+        <Grid container spacing={5}>
+          <Grid item md={5} sm={12}>
             <ProductGallery images={info.images} />
           </Grid>
-          <Grid item md={6} sm={12}>
+          <Grid item md={7} sm={12}>
             <Box>{`Tags: ${info.tags}`}</Box>
             <Box mt={1}>
               <Rating value={info.rating} readOnly />

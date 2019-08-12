@@ -3,21 +3,23 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Tiles from '@/components/blocks/Tiles';
+import Preloader from '@/components/blocks/Preloader';
+import Sidebar from '@/components/blocks/Sidebar';
 
 const ProductsPage = ({ isLoaded, filteredProducts }) => {
   return (
-    isLoaded && (
+    isLoaded ? (
       <Container maxWidth="lg">
         <Grid container>
           <Grid item md={3}>
-            Sidebar
+            <Sidebar />
           </Grid>
           <Grid item md={9}>
             <Tiles data={filteredProducts} />
           </Grid>
         </Grid>
       </Container>
-    )
+    ) : <Preloader />
   );
 };
 

@@ -1,4 +1,4 @@
-import { FETCH_DATA, RESPONSE_DATA, SET_FILTERED_DATA } from '../actions/dataActions';
+import { FETCH_DATA, RESPONSE_DATA, SET_FILTERED_DATA } from '@/actions/dataActions';
 
 const initialState = {
   products: [],

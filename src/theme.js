@@ -10,7 +10,9 @@ export const theme = {
       default: '#fff'
     },
     text: {
-      primary: '#565656'
+      primary: '#565656',
+      secondary: '#9ac2c9',
+      hover: '#cd8987'
     }
   }
 };
